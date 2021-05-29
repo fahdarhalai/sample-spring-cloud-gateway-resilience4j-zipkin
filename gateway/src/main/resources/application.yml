@@ -1,0 +1,19 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+      - id: USER-SERVICE
+        uri: lb://USER-SERVICE
+        predicates:
+          - Path=/users/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: userServiceCB
+              fallbackUri: forward:/fallback/user-service
+          #- RewritePath=/users, /fallback
