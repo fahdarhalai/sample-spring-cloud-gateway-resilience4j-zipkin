@@ -31,23 +31,6 @@ spring:
 ```
 
 ## Demo
-### Start services
-1. Run Zipkin Server with command:
-    ```shell
-    java -jar zipkin-server.jar
-    ```
-2. Go inside `/registry-service` folder and build the application with the command:
-    ```shell
-    gradlew clean build
-    ```
-    Go to `/build/libs` folder and run the jar file with command:
-    ```shell
-    java -jar filename.jar
-    ```
-
-3. Go inside `/config-server` folder and start the application using the same steps from `2.`.
-4. Start `gateway` and `user-service` the same way.
-
 ### Call to API
 1. Create a user with Postman or with cURL command:
 ```shell
